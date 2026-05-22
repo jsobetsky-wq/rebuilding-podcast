@@ -1,0 +1,162 @@
+{
+  "schedule": {
+    "recordingDay": "Thursday",
+    "editingDay": "Friday",
+    "publishDay": "Monday",
+    "socialPostDay": "Monday",
+    "recordingTime": "7:00 AM",
+    "timezone": "America/New_York"
+  },
+  "episodes": [
+    {
+      "number": 1,
+      "title": "Why I'm Here",
+      "status": "planned",
+      "recordDate": "2026-05-28",
+      "editDate": "2026-05-29",
+      "publishDate": "2026-06-01",
+      "socialDate": "2026-06-01",
+      "notes": "Cold open, no standard intro. See episode-1-outline.md"
+    },
+    {
+      "number": 2,
+      "title": "The Mask We Wear",
+      "status": "planned",
+      "recordDate": "2026-06-04",
+      "editDate": "2026-06-05",
+      "publishDate": "2026-06-08",
+      "socialDate": "2026-06-08",
+      "notes": ""
+    },
+    {
+      "number": 3,
+      "title": "Rock Bottom Is a Foundation",
+      "status": "planned",
+      "recordDate": "2026-06-11",
+      "editDate": "2026-06-12",
+      "publishDate": "2026-06-15",
+      "socialDate": "2026-06-15",
+      "notes": ""
+    },
+    {
+      "number": 4,
+      "title": "The 3 AM Conversations",
+      "status": "planned",
+      "recordDate": "2026-06-18",
+      "editDate": "2026-06-19",
+      "publishDate": "2026-06-22",
+      "socialDate": "2026-06-22",
+      "notes": ""
+    },
+    {
+      "number": 5,
+      "title": "Ownership Without Excuses",
+      "status": "planned",
+      "recordDate": "2026-06-25",
+      "editDate": "2026-06-26",
+      "publishDate": "2026-06-29",
+      "socialDate": "2026-06-29",
+      "notes": ""
+    },
+    {
+      "number": 6,
+      "title": "Building a Business While Broken",
+      "status": "planned",
+      "recordDate": "2026-07-02",
+      "editDate": "2026-07-03",
+      "publishDate": "2026-07-06",
+      "socialDate": "2026-07-06",
+      "notes": ""
+    },
+    {
+      "number": 7,
+      "title": "The People Who Stay",
+      "status": "planned",
+      "recordDate": "2026-07-09",
+      "editDate": "2026-07-10",
+      "publishDate": "2026-07-13",
+      "socialDate": "2026-07-13",
+      "notes": ""
+    },
+    {
+      "number": 8,
+      "title": "Fatherhood in the Wreckage",
+      "status": "planned",
+      "recordDate": "2026-07-16",
+      "editDate": "2026-07-17",
+      "publishDate": "2026-07-20",
+      "socialDate": "2026-07-20",
+      "notes": ""
+    },
+    {
+      "number": 9,
+      "title": "The Physical Rebuild",
+      "status": "planned",
+      "recordDate": "2026-07-23",
+      "editDate": "2026-07-24",
+      "publishDate": "2026-07-27",
+      "socialDate": "2026-07-27",
+      "notes": ""
+    },
+    {
+      "number": 10,
+      "title": "Letting Go of Who You Were",
+      "status": "planned",
+      "recordDate": "2026-07-30",
+      "editDate": "2026-07-31",
+      "publishDate": "2026-08-03",
+      "socialDate": "2026-08-03",
+      "notes": ""
+    },
+    {
+      "number": 11,
+      "title": "Asking for Help",
+      "status": "planned",
+      "recordDate": "2026-08-06",
+      "editDate": "2026-08-07",
+      "publishDate": "2026-08-10",
+      "socialDate": "2026-08-10",
+      "notes": ""
+    },
+    {
+      "number": 12,
+      "title": "The Daily Grind of Getting Better",
+      "status": "planned",
+      "recordDate": "2026-08-13",
+      "editDate": "2026-08-14",
+      "publishDate": "2026-08-17",
+      "socialDate": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "number": 13,
+      "title": "Trust — Rebuilding What You Destroyed",
+      "status": "planned",
+      "recordDate": "2026-08-20",
+      "editDate": "2026-08-21",
+      "publishDate": "2026-08-24",
+      "socialDate": "2026-08-24",
+      "notes": ""
+    },
+    {
+      "number": 14,
+      "title": "Finding Purpose in the Pain",
+      "status": "planned",
+      "recordDate": "2026-08-27",
+      "editDate": "2026-08-28",
+      "publishDate": "2026-08-31",
+      "socialDate": "2026-08-31",
+      "notes": ""
+    },
+    {
+      "number": 15,
+      "title": "What Rebuilding Actually Looks Like",
+      "status": "planned",
+      "recordDate": "2026-09-03",
+      "editDate": "2026-09-04",
+      "publishDate": "2026-09-07",
+      "socialDate": "2026-09-07",
+      "notes": "Season 1 finale — check-in and honest accounting"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ export function Nav() {
   const links = [
     { href: "/", label: "Home" },
     { href: "/episodes", label: "Episodes" },
+    { href: "/calendar", label: "Calendar" },
     { href: "/about", label: "About" },
   ];
 

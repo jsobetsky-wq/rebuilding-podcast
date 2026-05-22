@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+  Social Media Card Generator (LinkedIn/Twitter/Facebook)
+  Dimensions: 1200x630 (standard OG image size)
+  Open in browser → Edit quote and episode info → Screenshot
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px;
+    height: 630px;
+    background: #0a0a0a;
+    font-family: 'Arial', 'Helvetica Neue', sans-serif;
+    overflow: hidden;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 100px;
+    position: relative;
+  }
+  .accent-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    background: linear-gradient(180deg, #c2410c, #ea580c);
+  }
+  .podcast-label {
+    color: #c2410c;
+    font-size: 16px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  /* === EDIT THIS QUOTE === */
+  .quote {
+    color: #e5e5e5;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    max-width: 900px;
+    font-style: italic;
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .episode-info {
+    color: #737373;
+    font-size: 18px;
+  }
+  .host-name {
+    color: #525252;
+    font-size: 16px;
+  }
+  .logo-area {
+    position: absolute;
+    right: 80px;
+    bottom: 60px;
+    text-align: right;
+  }
+  .logo-r {
+    color: #c2410c;
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .logo-sub {
+    color: #404040;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="accent-line"></div>
+    <div class="podcast-label">Rebuilding a Broken Man</div>
+
+    <!-- === EDIT THESE === -->
+    <div class="quote">"I kept thinking if I just worked harder, closed more deals, stayed busier — I wouldn't have to deal with what was actually wrong."</div>
+    <div class="meta">
+      <span class="episode-info">Episode 1: Why I'm Here</span>
+      <span class="host-name">— John Sobetsky</span>
+    </div>
+    <!-- ================== -->
+
+    <div class="logo-area">
+      <div class="logo-r">R</div>
+      <div class="logo-sub">Podcast</div>
+    </div>
+  </div>
+</body>
+</html>
