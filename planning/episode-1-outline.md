@@ -9,7 +9,7 @@
 ## Cold Open (0:00–0:45)
 No music. No intro. Just start talking.
 
-> "I've been thinking about doing this for a while. And every time I sat down to plan it out, I talked myself out of it. Because who wants to hear a 40-something security company owner talk about how his life fell apart? But that's exactly why I'm doing this. Because I know I'm not the only one."
+> "I've been thinking about doing this for a while. And every time I sat down to plan it out, I talked myself out of it. Because who wants to hear a 40-something guy talk about how his life fell apart? But that's exactly why I'm doing this. Because I know I'm not the only one."
 
 Pause. Let it breathe.
 
@@ -18,19 +18,19 @@ Pause. Let it breathe.
 ## Intro (0:45–1:15)
 Short intro with music.
 
-> "Welcome to Rebuilding a Broken Man. I'm John Sobetsky. I own an electronic security company called Main Line Security Solutions out of the Philadelphia area. And this podcast is about what happens when the guy who's supposed to have it all together... doesn't."
+> "Welcome to Rebuilding a Broken Man. I'm John Sobetsky. I'm from the Philadelphia area. And this podcast is about what happens when the guy who's supposed to have it all together... doesn't."
 
 ---
 
 ## Section 1: Who I Am on Paper (1:15–3:00)
 Brief background — keep it conversational, not a resume:
-- Own a national electronic security company
-- Built the business from the ground up
-- Cameras, access control, alarm systems — I protect other people's stuff for a living
-- From the outside, things look solid
+- Career guy, always working, always grinding
+- Built a life that looked solid from the outside
+- The guy people count on — at work, at home, in every room
+- From the outside, things look good
 
 Key line to hit:
-> "I'm the guy clients trust to keep their buildings safe. But I couldn't keep my own life from falling apart."
+> "I'm the guy everyone counts on. But I couldn't keep my own life from falling apart."
 
 ---
 
@@ -38,7 +38,7 @@ Key line to hit:
 This is the real part. Be honest without oversharing on episode one. Leave room for future episodes.
 - Things started cracking — personally, relationally, mentally
 - The gap between the public version of me and the real version got too wide
-- Running a business while your personal life is on fire
+- Keeping it together at work while your personal life is on fire
 - The moment I realized I couldn't outwork this problem
 
 Key line:

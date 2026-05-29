@@ -5,7 +5,7 @@ const PODCAST_TITLE = "Rebuilding a Broken Man";
 const PODCAST_DESCRIPTION =
   "Raw, honest conversations about what it actually takes to rebuild your life. Hosted by John Sobetsky.";
 const AUTHOR = "John Sobetsky";
-const EMAIL = "johns@mainlinesecure.com";
+const EMAIL = "rebuildingabrokenman@gmail.com";
 const LANGUAGE = "en-us";
 const CATEGORY = "Society &amp; Culture";
 const SUBCATEGORY = "Personal Journals";

@@ -26,7 +26,7 @@ Use this template for every episode. Copy, fill in, and save as the episode JSON
 ### Connect
 - **LinkedIn:** [John Sobetsky](https://linkedin.com/in/johnsobetsky)
 - **Website:** [rebuildingabrokenman.com](https://rebuildingabrokenman.com)
-- **Email:** johns@mainlinesecure.com
+- **Email:** rebuildingabrokenman@gmail.com
 
 ### Tags
 [3-5 relevant tags for discoverability]

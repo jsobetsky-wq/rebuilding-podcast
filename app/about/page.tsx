@@ -11,16 +11,15 @@ export default function AboutPage() {
 
       <div className="space-y-6 text-[var(--color-text-muted)] leading-relaxed">
         <p className="text-lg text-[var(--color-text)]">
-          I&apos;m John Sobetsky. I own Main Line Security Solutions — an electronic
-          security company that provides alarm systems, cameras, access control,
-          and monitoring to businesses and homes across the country.
+          I&apos;m John Sobetsky. Father, professional, and a man who spent years
+          looking like he had it all together while everything was quietly
+          falling apart.
         </p>
 
         <p>
-          On paper, I&apos;m the guy who&apos;s got it figured out. Business owner.
-          Problem solver. The person people call when they need something
-          protected. But the truth is, I spent years protecting everyone and
-          everything except myself.
+          On paper, I&apos;m the guy who&apos;s got it figured out. Steady career.
+          Problem solver. The person people count on. But the truth is, I spent
+          years taking care of everyone and everything except myself.
         </p>
 
         <p>
@@ -103,14 +102,8 @@ export default function AboutPage() {
           hear about it. Send me a message. I read every one.
         </p>
 
-        <p className="text-sm">
-          Business inquiries:{" "}
-          <a
-            href="mailto:johns@mainlinesecure.com"
-            className="text-[var(--color-accent-light)] hover:underline"
-          >
-            johns@mainlinesecure.com
-          </a>
+        <p className="text-sm text-[var(--color-text-muted)]">
+          Reach out through LinkedIn — that&apos;s the best way to connect.
         </p>
       </div>
     </div>

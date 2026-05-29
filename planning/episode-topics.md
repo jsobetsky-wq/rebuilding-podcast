@@ -18,7 +18,7 @@ The thoughts that come when the world is asleep. Learning to sit with discomfort
 Taking full responsibility for your life — not as punishment, but as power. The difference between blame and accountability.
 
 ### Episode 6: Building a Business While Broken
-Running a company when your personal life is falling apart. How I kept Main Line Security Solutions going when I could barely keep myself going.
+Showing up to work when your personal life is falling apart. How I kept performing professionally when I could barely keep myself going.
 
 ### Episode 7: The People Who Stay
 Not everyone leaves when things get hard. A tribute to the people who stuck around, and what loyalty actually looks like when it's tested.

@@ -2,7 +2,7 @@
 
 ## Overview
 
-John is already active on LinkedIn as an electronic security authority. The podcast introduces a personal brand dimension alongside the professional one. The goal is not to replace the security content — it's to add a human layer that deepens trust and expands reach.
+John is already active on LinkedIn professionally. The podcast introduces a personal brand dimension alongside the professional one. The goal is to add a human layer that deepens trust and expands reach.
 
 ## Content Pillars
 
@@ -27,9 +27,9 @@ Episode [X]: "[Title]" — Rebuilding a Broken Man podcast
 "I kept thinking if I just worked harder, closed more deals, stayed busier —
 I wouldn't have to deal with what was actually wrong."
 
-That's from the first episode of my new podcast. I own a security company.
-I've built something I'm proud of. But I spent years pretending the rest
-of my life was as solid as my business.
+That's from the first episode of my new podcast. I've built a career
+I'm proud of. But I spent years pretending the rest of my life was
+as solid as my professional life.
 
 This is me, being honest about what that cost.
 
@@ -72,11 +72,11 @@ The best take was the one where I didn't.
 
 ## Rules
 
-1. **Never sacrifice the security brand.** The podcast is personal brand. It coexists with, not replaces, the professional authority.
+1. **Keep the podcast separate from your day job.** The podcast is personal brand. It coexists with, not replaces, professional life.
 2. **No motivational platitudes.** Specific > generic. Always.
 3. **Don't over-promote.** One direct episode plug per week max. Let the personal content drive curiosity.
 4. **Engage in comments.** When people respond — and they will — engage genuinely. This is where relationships deepen.
-5. **Cross-pollinate carefully.** Occasionally bridge — "Running a security company while rebuilding yourself teaches you that protection starts from the inside." But don't force it.
+5. **Cross-pollinate carefully.** Occasionally bridge professional and personal — "Working a demanding career while rebuilding yourself teaches you that growth starts from the inside." But don't force it.
 
 ## Hashtags
 

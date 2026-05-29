@@ -60,10 +60,9 @@ export default function Home() {
           <div>
             <h2 className="text-2xl font-bold mb-4">About the Show</h2>
             <p className="text-[var(--color-text-muted)] leading-relaxed mb-4">
-              I&apos;m John Sobetsky. I own an electronic security company called
-              Main Line Security Solutions. I protect buildings, businesses, and
-              people for a living. But I couldn&apos;t protect my own life from
-              falling apart.
+              I&apos;m John Sobetsky. A father and a professional who spent years
+              looking like he had it all figured out. But I couldn&apos;t keep my
+              own life from falling apart.
             </p>
             <p className="text-[var(--color-text-muted)] leading-relaxed mb-6">
               This podcast is about what comes after. The rebuilding. The daily
