@@ -1,15 +1,185 @@
-import calendarData from "@/content/calendar.json";
+"use client";
 
-export const metadata = {
-  title: "Calendar — Rebuilding a Broken Man",
-  description: "Production calendar and recording schedule.",
-};
+import { useState } from "react";
 
 type Status = "planned" | "recorded" | "edited" | "published";
 
+interface CalendarEpisode {
+  number: number;
+  title: string;
+  status: Status;
+  recordDate: string;
+  editDate: string;
+  publishDate: string;
+  socialDate: string;
+  notes: string;
+}
+
+const schedule = {
+  recordingDay: "Thursday",
+  editingDay: "Friday",
+  publishDay: "Monday",
+  socialPostDay: "Monday",
+  recordingTime: "7:00 AM",
+  timezone: "America/New_York",
+};
+
+const initialEpisodes: CalendarEpisode[] = [
+  {
+    number: 1,
+    title: "The Beginning",
+    status: "published",
+    recordDate: "2025-05-01",
+    editDate: "2025-05-01",
+    publishDate: "2025-05-01",
+    socialDate: "2025-05-01",
+    notes: "Live on Spotify",
+  },
+  {
+    number: 2,
+    title: "The Mask We Wear",
+    status: "planned",
+    recordDate: "2026-06-04",
+    editDate: "2026-06-05",
+    publishDate: "2026-06-08",
+    socialDate: "2026-06-08",
+    notes: "",
+  },
+  {
+    number: 3,
+    title: "Rock Bottom Is a Foundation",
+    status: "planned",
+    recordDate: "2026-06-11",
+    editDate: "2026-06-12",
+    publishDate: "2026-06-15",
+    socialDate: "2026-06-15",
+    notes: "",
+  },
+  {
+    number: 4,
+    title: "The 3 AM Conversations",
+    status: "planned",
+    recordDate: "2026-06-18",
+    editDate: "2026-06-19",
+    publishDate: "2026-06-22",
+    socialDate: "2026-06-22",
+    notes: "",
+  },
+  {
+    number: 5,
+    title: "Ownership Without Excuses",
+    status: "planned",
+    recordDate: "2026-06-25",
+    editDate: "2026-06-26",
+    publishDate: "2026-06-29",
+    socialDate: "2026-06-29",
+    notes: "",
+  },
+  {
+    number: 6,
+    title: "Building a Business While Broken",
+    status: "planned",
+    recordDate: "2026-07-02",
+    editDate: "2026-07-03",
+    publishDate: "2026-07-06",
+    socialDate: "2026-07-06",
+    notes: "",
+  },
+  {
+    number: 7,
+    title: "The People Who Stay",
+    status: "planned",
+    recordDate: "2026-07-09",
+    editDate: "2026-07-10",
+    publishDate: "2026-07-13",
+    socialDate: "2026-07-13",
+    notes: "",
+  },
+  {
+    number: 8,
+    title: "Fatherhood in the Wreckage",
+    status: "planned",
+    recordDate: "2026-07-16",
+    editDate: "2026-07-17",
+    publishDate: "2026-07-20",
+    socialDate: "2026-07-20",
+    notes: "",
+  },
+  {
+    number: 9,
+    title: "The Physical Rebuild",
+    status: "planned",
+    recordDate: "2026-07-23",
+    editDate: "2026-07-24",
+    publishDate: "2026-07-27",
+    socialDate: "2026-07-27",
+    notes: "",
+  },
+  {
+    number: 10,
+    title: "Letting Go of Who You Were",
+    status: "planned",
+    recordDate: "2026-07-30",
+    editDate: "2026-07-31",
+    publishDate: "2026-08-03",
+    socialDate: "2026-08-03",
+    notes: "",
+  },
+  {
+    number: 11,
+    title: "Asking for Help",
+    status: "planned",
+    recordDate: "2026-08-06",
+    editDate: "2026-08-07",
+    publishDate: "2026-08-10",
+    socialDate: "2026-08-10",
+    notes: "",
+  },
+  {
+    number: 12,
+    title: "The Daily Grind of Getting Better",
+    status: "planned",
+    recordDate: "2026-08-13",
+    editDate: "2026-08-14",
+    publishDate: "2026-08-17",
+    socialDate: "2026-08-17",
+    notes: "",
+  },
+  {
+    number: 13,
+    title: "Trust — Rebuilding What You Destroyed",
+    status: "planned",
+    recordDate: "2026-08-20",
+    editDate: "2026-08-21",
+    publishDate: "2026-08-24",
+    socialDate: "2026-08-24",
+    notes: "",
+  },
+  {
+    number: 14,
+    title: "Finding Purpose in the Pain",
+    status: "planned",
+    recordDate: "2026-08-27",
+    editDate: "2026-08-28",
+    publishDate: "2026-08-31",
+    socialDate: "2026-08-31",
+    notes: "",
+  },
+  {
+    number: 15,
+    title: "What Rebuilding Actually Looks Like",
+    status: "planned",
+    recordDate: "2026-09-03",
+    editDate: "2026-09-04",
+    publishDate: "2026-09-07",
+    socialDate: "2026-09-07",
+    notes: "Season 1 finale — check-in and honest accounting",
+  },
+];
+
 const statusColors: Record<Status, string> = {
   planned: "border-[var(--color-border)] text-[var(--color-text-muted)]",
-  recorded: "border-yellow-700 text-yellow-500",
+  recorded: "border-orange-700 text-orange-400",
   edited: "border-blue-700 text-blue-400",
   published: "border-green-700 text-green-400",
 };
@@ -39,22 +209,47 @@ function isUpcoming(dateStr: string): boolean {
 }
 
 export default function CalendarPage() {
-  const { schedule, episodes } = calendarData;
-  const today = new Date().toISOString().slice(0, 10);
+  const [episodes] = useState<CalendarEpisode[]>(initialEpisodes);
 
+  const today = new Date().toISOString().slice(0, 10);
   const nextUp = episodes.find(
     (ep) => ep.status !== "published" && ep.recordDate >= today
   );
 
+  const publishedCount = episodes.filter(
+    (ep) => ep.status === "published"
+  ).length;
+  const totalCount = episodes.length;
+
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold mb-2">Production Calendar</h1>
-      <p className="text-[var(--color-text-muted)] mb-10">
-        Recording schedule, deadlines, and accountability tracker.
+    <div className="max-w-6xl mx-auto px-6 py-10">
+      <h1 className="text-3xl font-bold mb-1">Production Calendar</h1>
+      <p className="text-[var(--color-text-muted)] mb-8">
+        Recording schedule, deadlines, and episode status tracker.
       </p>
 
+      {/* Progress bar */}
+      <div className="mb-8 p-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-sm text-[var(--color-text-muted)]">
+            Season 1 Progress
+          </span>
+          <span className="text-sm font-bold">
+            {publishedCount}/{totalCount} episodes
+          </span>
+        </div>
+        <div className="w-full h-2 bg-[var(--color-bg)] rounded-full overflow-hidden">
+          <div
+            className="h-full bg-green-600 rounded-full transition-all"
+            style={{
+              width: `${(publishedCount / totalCount) * 100}%`,
+            }}
+          />
+        </div>
+      </div>
+
       {/* Weekly Rhythm */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <div className="p-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
           <p className="text-xs text-[var(--color-text-muted)] uppercase tracking-wide mb-1">
             Record
@@ -95,7 +290,7 @@ export default function CalendarPage() {
 
       {/* Next Up */}
       {nextUp && (
-        <div className="mb-12 p-6 rounded-xl border-2 border-[var(--color-accent)] bg-[var(--color-bg-card)]">
+        <div className="mb-8 p-6 rounded-xl border-2 border-[var(--color-accent)] bg-[var(--color-bg-card)]">
           <p className="text-xs text-[var(--color-accent-light)] uppercase tracking-wide font-bold mb-2">
             Next Up
           </p>
@@ -112,6 +307,13 @@ export default function CalendarPage() {
               {nextUp.notes}
             </p>
           )}
+          <div className="mt-2">
+            <span
+              className={`inline-flex items-center px-2.5 py-0.5 rounded-full border text-xs font-medium ${statusColors[nextUp.status]}`}
+            >
+              {statusLabels[nextUp.status]}
+            </span>
+          </div>
         </div>
       )}
 
@@ -132,7 +334,7 @@ export default function CalendarPage() {
       {/* Episode Timeline */}
       <div className="space-y-3">
         {episodes.map((ep) => {
-          const status = ep.status as Status;
+          const status = ep.status;
           const recordSoon = isUpcoming(ep.recordDate);
           return (
             <div
@@ -169,7 +371,9 @@ export default function CalendarPage() {
                     </p>
                     <p
                       className={
-                        recordSoon ? "text-[var(--color-accent-light)] font-bold" : ""
+                        recordSoon
+                          ? "text-[var(--color-accent-light)] font-bold"
+                          : ""
                       }
                     >
                       {formatDate(ep.recordDate)}
@@ -203,8 +407,8 @@ export default function CalendarPage() {
         })}
       </div>
 
-      {/* Accountability */}
-      <div className="mt-16 p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+      {/* Weekly Checklist */}
+      <div className="mt-12 p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
         <h2 className="text-xl font-bold mb-4">Weekly Checklist</h2>
         <div className="grid md:grid-cols-2 gap-6 text-[var(--color-text-muted)]">
           <div>
@@ -232,9 +436,9 @@ export default function CalendarPage() {
                 </code>
                 )
               </li>
-              <li>Listen through — flag any sections to re-record or cut</li>
+              <li>Listen through — flag any sections to cut</li>
               <li>Extract 1-2 clips for shorts</li>
-              <li>Write show notes + update episode JSON</li>
+              <li>Write show notes</li>
             </ul>
           </div>
           <div>
@@ -242,11 +446,11 @@ export default function CalendarPage() {
               Publish Day ({schedule.publishDay})
             </h3>
             <ul className="space-y-2 text-sm">
-              <li>Upload MP3 to podcast host / CDN</li>
-              <li>Update episode JSON with audioUrl</li>
+              <li>Upload MP3 to Spotify via Spotify for Podcasters</li>
+              <li>Set episode title, description, tags</li>
               <li>Push to GitHub (triggers site deploy)</li>
-              <li>Verify RSS feed and episode page</li>
-              <li>Generate + post cover art and social card</li>
+              <li>Verify episode appears on Spotify</li>
+              <li>Generate cover art and social card</li>
             </ul>
           </div>
           <div>
@@ -258,7 +462,7 @@ export default function CalendarPage() {
               <li>Create audiogram or short video clip</li>
               <li>Upload short to YouTube Shorts / Instagram Reels</li>
               <li>Engage with comments throughout the day</li>
-              <li>Update calendar status to &quot;published&quot;</li>
+              <li>Update calendar status</li>
             </ul>
           </div>
         </div>

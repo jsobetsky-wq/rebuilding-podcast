@@ -1,144 +1,167 @@
-import Link from "next/link";
-import { getPublishedEpisodes } from "@/lib/episodes";
+"use client";
 
-function SubscribeButton({
-  href,
-  label,
-}: {
-  href: string;
-  label: string;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center px-5 py-2.5 border border-[var(--color-border)] rounded-lg text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:border-[var(--color-accent)] transition-all"
-    >
-      {label}
-    </a>
-  );
-}
+import Link from "next/link";
+
+const SPOTIFY_SHOW_URL =
+  "https://open.spotify.com/show/033oaVWEUMuw9DQsPk1eFA";
+
+const stats = [
+  { label: "Total Episodes", value: "1", sub: "published" },
+  { label: "Total Listens", value: "--", sub: "connect analytics" },
+  { label: "Followers", value: "--", sub: "connect analytics" },
+  { label: "Avg Length", value: "9:52", sub: "minutes" },
+];
+
+const recentActivity = [
+  {
+    date: "May 2025",
+    text: 'Episode 1 "The Beginning" published on Spotify',
+    type: "publish",
+  },
+  {
+    date: "May 2025",
+    text: "Production dashboard created",
+    type: "system",
+  },
+  {
+    date: "May 2025",
+    text: "Audio processing scripts configured",
+    type: "system",
+  },
+];
 
 export default function Home() {
-  const episodes = getPublishedEpisodes();
-  const latestEpisode = episodes[0];
-
   return (
-    <div>
-      {/* Hero */}
-      <section className="max-w-4xl mx-auto px-6 pt-20 pb-16">
-        <p className="text-[var(--color-accent-light)] text-sm font-medium tracking-widest uppercase mb-4">
-          A Podcast
+    <div className="max-w-6xl mx-auto px-6 py-10">
+      {/* Header */}
+      <div className="mb-10">
+        <h1 className="text-3xl font-bold mb-1">Production Dashboard</h1>
+        <p className="text-[var(--color-text-muted)]">
+          Rebuilding a Broken Man — podcast production hub
         </p>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-          Rebuilding
-          <br />
-          <span className="text-[var(--color-text-muted)]">a Broken Man</span>
-        </h1>
-        <p className="text-xl text-[var(--color-text-muted)] max-w-2xl leading-relaxed mb-10">
-          Raw, honest conversations about what it actually takes to put yourself
-          back together. No filters, no quick fixes — just the truth about
-          rebuilding your life when everything falls apart.
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <SubscribeButton href="#" label="Apple Podcasts" />
-          <SubscribeButton href="#" label="Spotify" />
-          <SubscribeButton href="#" label="YouTube" />
-          <SubscribeButton href="/api/feed" label="RSS" />
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-[var(--color-border)]" />
       </div>
 
-      {/* About Preview */}
-      <section className="max-w-4xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-2xl font-bold mb-4">About the Show</h2>
-            <p className="text-[var(--color-text-muted)] leading-relaxed mb-4">
-              I&apos;m John Sobetsky. A father and a professional who spent years
-              looking like he had it all figured out. But I couldn&apos;t keep my
-              own life from falling apart.
-            </p>
-            <p className="text-[var(--color-text-muted)] leading-relaxed mb-6">
-              This podcast is about what comes after. The rebuilding. The daily
-              grind of getting better. The conversations men don&apos;t have but
-              desperately need to.
-            </p>
-            <Link
-              href="/about"
-              className="text-[var(--color-accent-light)] text-sm font-medium hover:underline"
-            >
-              Read more &rarr;
-            </Link>
-          </div>
-          <div className="flex items-center justify-center">
-            <div className="w-64 h-64 rounded-2xl bg-[var(--color-bg-card)] border border-[var(--color-border)] flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-6xl font-bold text-[var(--color-accent)]">R</div>
-                <div className="text-sm text-[var(--color-text-muted)] mt-2 tracking-widest">
-                  PODCAST
-                </div>
-              </div>
+      {/* Show Status Card */}
+      <div className="p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] mb-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className="w-14 h-14 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] flex items-center justify-center">
+              <span className="text-2xl font-bold text-[var(--color-accent)]">
+                R
+              </span>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold">Rebuilding a Broken Man</h2>
+              <p className="text-sm text-[var(--color-text-muted)]">
+                1 episode published on Spotify
+              </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Latest Episode */}
-      {latestEpisode && (
-        <>
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="border-t border-[var(--color-border)]" />
-          </div>
-          <section className="max-w-4xl mx-auto px-6 py-16">
-            <h2 className="text-sm font-medium text-[var(--color-accent-light)] tracking-widest uppercase mb-6">
-              Latest Episode
-            </h2>
-            <Link
-              href={`/episodes/${latestEpisode.slug}`}
-              className="block group"
-            >
-              <div className="p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] hover:border-[var(--color-accent)]/50 transition-all">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-[var(--color-text-muted)] text-sm mb-1">
-                      Episode {latestEpisode.number}
-                      {latestEpisode.duration && ` · ${latestEpisode.duration}`}
-                    </p>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-[var(--color-accent-light)] transition-colors">
-                      {latestEpisode.title}
-                    </h3>
-                    <p className="text-[var(--color-text-muted)] leading-relaxed">
-                      {latestEpisode.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </section>
-        </>
-      )}
-
-      {/* CTA */}
-      <section className="max-w-4xl mx-auto px-6 pb-20">
-        <div className="text-center py-16 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
-          <h2 className="text-2xl font-bold mb-3">New episodes weekly</h2>
-          <p className="text-[var(--color-text-muted)] mb-6">
-            Subscribe wherever you listen to podcasts.
-          </p>
-          <Link
-            href="/episodes"
-            className="inline-flex items-center px-6 py-3 bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-white font-medium rounded-lg transition-colors"
+          <a
+            href={SPOTIFY_SHOW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-green-700 text-green-400 text-sm font-medium hover:bg-green-900/20 transition-colors"
           >
-            All Episodes
-          </Link>
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+            </svg>
+            View on Spotify
+          </a>
         </div>
-      </section>
+      </div>
+
+      {/* Quick Stats */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        {stats.map((stat) => (
+          <div
+            key={stat.label}
+            className="p-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]"
+          >
+            <p className="text-xs text-[var(--color-text-muted)] uppercase tracking-wide mb-1">
+              {stat.label}
+            </p>
+            <p className="text-2xl font-bold">{stat.value}</p>
+            <p className="text-xs text-[var(--color-text-muted)]">{stat.sub}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-8 mb-8">
+        {/* Next Up */}
+        <div className="p-6 rounded-xl border-2 border-[var(--color-accent)] bg-[var(--color-bg-card)]">
+          <p className="text-xs text-[var(--color-accent-light)] uppercase tracking-wide font-bold mb-3">
+            Next Up
+          </p>
+          <h3 className="text-lg font-bold mb-1">
+            Episode 2: The Mask We Wear
+          </h3>
+          <p className="text-sm text-[var(--color-text-muted)] mb-3">
+            Record: Jun 4 &middot; Edit: Jun 5 &middot; Publish: Jun 8
+          </p>
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full border text-xs font-medium border-[var(--color-border)] text-[var(--color-text-muted)]">
+              Planned
+            </span>
+          </div>
+        </div>
+
+        {/* Quick Actions */}
+        <div className="p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+          <p className="text-xs text-[var(--color-text-muted)] uppercase tracking-wide font-bold mb-4">
+            Quick Actions
+          </p>
+          <div className="grid grid-cols-1 gap-3">
+            <Link
+              href="/episodes"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent)]/50 bg-[var(--color-bg)] transition-all text-sm font-medium"
+            >
+              <span className="text-[var(--color-accent-light)]">+</span>
+              New Episode
+            </Link>
+            <Link
+              href="/clips"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent)]/50 bg-[var(--color-bg)] transition-all text-sm font-medium"
+            >
+              <span className="text-[var(--color-accent-light)]">&#9986;</span>
+              Create Clip
+            </Link>
+            <Link
+              href="/linkedin"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent)]/50 bg-[var(--color-bg)] transition-all text-sm font-medium"
+            >
+              <span className="text-[var(--color-accent-light)]">&#9998;</span>
+              Draft LinkedIn Post
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Recent Activity */}
+      <div className="p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+        <h2 className="text-sm font-bold uppercase tracking-wide text-[var(--color-text-muted)] mb-4">
+          Recent Activity
+        </h2>
+        <div className="space-y-4">
+          {recentActivity.map((item, i) => (
+            <div key={i} className="flex items-start gap-3">
+              <div
+                className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${
+                  item.type === "publish"
+                    ? "bg-green-500"
+                    : "bg-[var(--color-text-muted)]"
+                }`}
+              />
+              <div>
+                <p className="text-sm">{item.text}</p>
+                <p className="text-xs text-[var(--color-text-muted)]">
+                  {item.date}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

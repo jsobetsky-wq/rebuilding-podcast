@@ -4,15 +4,9 @@ import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "Rebuilding a Broken Man",
+  title: "RABM Production Dashboard",
   description:
-    "A podcast about personal growth, rebuilding, and lessons learned. Hosted by John Sobetsky.",
-  openGraph: {
-    title: "Rebuilding a Broken Man",
-    description:
-      "Raw, honest conversations about what it takes to rebuild your life. Hosted by John Sobetsky.",
-    type: "website",
-  },
+    "Production dashboard for the Rebuilding a Broken Man podcast.",
 };
 
 export default function RootLayout({
@@ -22,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col bg-[var(--color-bg)]">
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

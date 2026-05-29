@@ -1,110 +1,201 @@
 export const metadata = {
-  title: "About — Rebuilding a Broken Man",
-  description:
-    "About John Sobetsky and the Rebuilding a Broken Man podcast.",
+  title: "Resources — Rebuilding a Broken Man",
+  description: "Tools, scripts, and resources for podcast production.",
 };
 
-export default function AboutPage() {
+const audioScripts = [
+  {
+    file: "scripts/audio/process-episode.sh",
+    description:
+      "Main episode processor — normalizes audio, applies compression, removes silence, outputs final MP3.",
+  },
+  {
+    file: "scripts/audio/create-clip.sh",
+    description:
+      "Extract a clip from an episode by start/end time. Outputs clip with fade in/out.",
+  },
+  {
+    file: "scripts/audio/batch-normalize.sh",
+    description:
+      "Batch normalize multiple audio files to consistent loudness levels.",
+  },
+];
+
+const videoScripts = [
+  {
+    file: "scripts/video/create-short.sh",
+    description:
+      "Create a vertical short (9:16) from an audio clip with waveform visualization.",
+  },
+  {
+    file: "scripts/video/create-audiogram.sh",
+    description:
+      "Generate an audiogram video with waveform animation for social media.",
+  },
+  {
+    file: "scripts/video/add-subtitles.sh",
+    description:
+      "Burn subtitles into a video from an SRT file.",
+  },
+];
+
+const graphicsTemplates = [
+  {
+    file: "scripts/graphics/generate-episode-cover.html",
+    description:
+      "HTML template for generating per-episode cover art. Open in browser, screenshot at 3000x3000.",
+  },
+  {
+    file: "scripts/graphics/generate-podcast-cover.html",
+    description:
+      "Main podcast cover art template for Spotify/Apple.",
+  },
+  {
+    file: "scripts/graphics/generate-social-card.html",
+    description:
+      "Social card template for LinkedIn/Twitter sharing.",
+  },
+  {
+    file: "scripts/graphics/generate-youtube-thumbnail.html",
+    description:
+      "YouTube thumbnail template (1280x720).",
+  },
+];
+
+const planningDocs = [
+  {
+    file: "planning/episode-topics.md",
+    description: "Master list of episode topics for Season 1.",
+  },
+  {
+    file: "planning/episode-1-outline.md",
+    description: "Detailed outline for the first episode.",
+  },
+  {
+    file: "planning/production-workflow.md",
+    description: "End-to-end production workflow documentation.",
+  },
+  {
+    file: "planning/linkedin-strategy.md",
+    description: "LinkedIn content strategy and posting cadence.",
+  },
+  {
+    file: "planning/intro-outro-scripts.md",
+    description: "Standard intro and outro scripts.",
+  },
+  {
+    file: "planning/show-notes-template.md",
+    description: "Template for writing episode show notes.",
+  },
+  {
+    file: "planning/tools-setup.md",
+    description: "Software tools setup guide (Riverside, ffmpeg, etc.).",
+  },
+];
+
+const quickReference = [
+  {
+    label: "Spotify Audio Specs",
+    details: "MP3, 128-320kbps, 44.1kHz, stereo or mono. Loudness: -14 LUFS.",
+  },
+  {
+    label: "Episode Cover Art",
+    details: "3000x3000 px, JPEG or PNG, under 512KB, RGB color.",
+  },
+  {
+    label: "LinkedIn Post Limits",
+    details:
+      "3000 characters max. Images: 1200x627 px. Video: up to 10 min, under 5GB.",
+  },
+  {
+    label: "YouTube Shorts",
+    details: "Vertical 9:16, up to 60 seconds, 1080x1920 px.",
+  },
+  {
+    label: "Instagram Reels",
+    details: "Vertical 9:16, up to 90 seconds, 1080x1920 px.",
+  },
+  {
+    label: "Recommended Export",
+    details:
+      "Audio: WAV 48kHz for recording, MP3 320kbps for distribution. Video: H.264, AAC audio.",
+  },
+];
+
+function FileList({
+  items,
+}: {
+  items: { file: string; description: string }[];
+}) {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold mb-8">About</h1>
+    <div className="space-y-3">
+      {items.map((item) => (
+        <div
+          key={item.file}
+          className="p-3 rounded-lg bg-[var(--color-bg)] border border-[var(--color-border)]"
+        >
+          <code className="text-xs text-[var(--color-accent-light)] block mb-1">
+            {item.file}
+          </code>
+          <p className="text-sm text-[var(--color-text-muted)]">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
 
-      <div className="space-y-6 text-[var(--color-text-muted)] leading-relaxed">
-        <p className="text-lg text-[var(--color-text)]">
-          I&apos;m John Sobetsky. Father, professional, and a man who spent years
-          looking like he had it all together while everything was quietly
-          falling apart.
-        </p>
+export default function ResourcesPage() {
+  return (
+    <div className="max-w-6xl mx-auto px-6 py-10">
+      <h1 className="text-3xl font-bold mb-1">Resources</h1>
+      <p className="text-[var(--color-text-muted)] mb-10">
+        Scripts, templates, planning docs, and quick reference for production.
+      </p>
 
-        <p>
-          On paper, I&apos;m the guy who&apos;s got it figured out. Steady career.
-          Problem solver. The person people count on. But the truth is, I spent
-          years taking care of everyone and everything except myself.
-        </p>
+      <div className="grid lg:grid-cols-2 gap-8">
+        {/* Audio Scripts */}
+        <div className="p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+          <h2 className="text-lg font-bold mb-4">Audio Scripts</h2>
+          <FileList items={audioScripts} />
+        </div>
 
-        <p>
-          Life fell apart in ways I didn&apos;t see coming — or maybe ways I refused
-          to see coming. Personal failures, broken relationships, and a growing
-          gap between who I pretended to be and who I actually was. I hit a point
-          where I had to either keep pretending or start over.
-        </p>
+        {/* Video Scripts */}
+        <div className="p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+          <h2 className="text-lg font-bold mb-4">Video Scripts</h2>
+          <FileList items={videoScripts} />
+        </div>
 
-        <p>I chose to start over.</p>
+        {/* Graphics Templates */}
+        <div className="p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+          <h2 className="text-lg font-bold mb-4">Graphics Templates</h2>
+          <FileList items={graphicsTemplates} />
+        </div>
 
-        <div className="border-t border-[var(--color-border)] my-10" />
+        {/* Planning Docs */}
+        <div className="p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+          <h2 className="text-lg font-bold mb-4">Planning Docs</h2>
+          <FileList items={planningDocs} />
+        </div>
+      </div>
 
-        <h2 className="text-2xl font-bold text-[var(--color-text)] mb-4">
-          Why This Podcast
-        </h2>
-
-        <p>
-          Men don&apos;t talk about this stuff. Not honestly. We talk about business
-          wins and workouts and surface-level goals. We don&apos;t talk about the
-          nights where nothing makes sense, or the fear that we&apos;ve broken
-          something beyond repair, or the shame of admitting we need help.
-        </p>
-
-        <p>
-          I started recording because I realized the conversations that helped me
-          most were the ones nobody was having publicly. The raw, uncomfortable
-          ones. The ones where you admit you don&apos;t have it figured out.
-        </p>
-
-        <p>
-          This podcast isn&apos;t a comeback story. I&apos;m not on the other side
-          of anything. I&apos;m in it. And maybe that&apos;s the value — hearing
-          from someone who&apos;s actively rebuilding, not someone who already has
-          it polished and packaged.
-        </p>
-
-        <div className="border-t border-[var(--color-border)] my-10" />
-
-        <h2 className="text-2xl font-bold text-[var(--color-text)] mb-4">
-          What to Expect
-        </h2>
-
-        <ul className="space-y-3">
-          <li className="flex gap-3">
-            <span className="text-[var(--color-accent-light)] font-bold">~10 min</span>
-            <span>episodes — enough to say something real without wasting your time</span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-[var(--color-accent-light)] font-bold">Solo</span>
-            <span>format — just me and a microphone. No guests, no interviews (for now)</span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-[var(--color-accent-light)] font-bold">Weekly</span>
-            <span>releases — new episode every Monday</span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-[var(--color-accent-light)] font-bold">Honest</span>
-            <span>— no motivational platitudes. Specific, personal, real.</span>
-          </li>
-        </ul>
-
-        <div className="border-t border-[var(--color-border)] my-10" />
-
-        <h2 className="text-2xl font-bold text-[var(--color-text)] mb-4">
-          Connect
-        </h2>
-
-        <p>
-          Find me on{" "}
-          <a
-            href="https://linkedin.com/in/johnsobetsky"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[var(--color-accent-light)] hover:underline"
-          >
-            LinkedIn
-          </a>
-          . If something I said on the show resonated, I&apos;d genuinely love to
-          hear about it. Send me a message. I read every one.
-        </p>
-
-        <p className="text-sm text-[var(--color-text-muted)]">
-          Reach out through LinkedIn — that&apos;s the best way to connect.
-        </p>
+      {/* Quick Reference */}
+      <div className="mt-8 p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+        <h2 className="text-lg font-bold mb-4">Quick Reference</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          {quickReference.map((ref) => (
+            <div
+              key={ref.label}
+              className="p-3 rounded-lg bg-[var(--color-bg)] border border-[var(--color-border)]"
+            >
+              <p className="text-sm font-medium mb-1">{ref.label}</p>
+              <p className="text-xs text-[var(--color-text-muted)]">
+                {ref.details}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
