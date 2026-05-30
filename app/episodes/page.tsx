@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-type EpisodeStatus = "Draft" | "Recorded" | "Edited" | "Published";
+type EpisodeStatus = "Draft" | "Recorded" | "Edited" | "Scheduled" | "Published";
 
 interface Episode {
   number: number;
@@ -19,6 +19,7 @@ const statusColors: Record<EpisodeStatus, string> = {
   Draft: "border-[var(--color-border)] text-[var(--color-text-muted)] bg-[var(--color-bg)]",
   Recorded: "border-orange-700 text-orange-400 bg-orange-900/10",
   Edited: "border-blue-700 text-blue-400 bg-blue-900/10",
+  Scheduled: "border-yellow-700 text-yellow-400 bg-yellow-900/10",
   Published: "border-green-700 text-green-400 bg-green-900/10",
 };
 
@@ -35,11 +36,11 @@ const initialEpisodes: Episode[] = [
   },
   {
     number: 2,
-    slug: "the-mask-we-wear",
-    title: "The Mask We Wear",
-    status: "Draft",
-    date: "2026-06-08",
-    duration: "",
+    slug: "mens-mental-health",
+    title: "Men's Mental Health",
+    status: "Scheduled",
+    date: "2026-06-01",
+    duration: "12:34",
     spotifyUrl: "",
   },
   {
@@ -47,7 +48,7 @@ const initialEpisodes: Episode[] = [
     slug: "rock-bottom-is-a-foundation",
     title: "Rock Bottom Is a Foundation",
     status: "Draft",
-    date: "2026-06-15",
+    date: "",
     duration: "",
     spotifyUrl: "",
   },

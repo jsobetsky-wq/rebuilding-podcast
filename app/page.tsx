@@ -7,25 +7,35 @@ const SPOTIFY_SHOW_URL =
 
 const stats = [
   { label: "Total Episodes", value: "1", sub: "published" },
-  { label: "Total Listens", value: "--", sub: "connect analytics" },
+  { label: "Total Clips", value: "11", sub: "created" },
   { label: "Followers", value: "--", sub: "connect analytics" },
   { label: "Avg Length", value: "9:52", sub: "minutes" },
 ];
 
 const recentActivity = [
   {
-    date: "May 2025",
+    date: "May 30, 2026",
+    text: 'Episode 3 "Rock Bottom Is a Foundation" — structure & LinkedIn preview created',
+    type: "system",
+  },
+  {
+    date: "Jun 1, 2026",
+    text: 'Episode 2 "Men\'s Mental Health" scheduled for Spotify',
+    type: "scheduled",
+  },
+  {
+    date: "May 2026",
+    text: "11 audio clips created from EP1 & EP2",
+    type: "clip",
+  },
+  {
+    date: "May 2026",
     text: 'Episode 1 "The Beginning" published on Spotify',
     type: "publish",
   },
   {
-    date: "May 2025",
-    text: "Production dashboard created",
-    type: "system",
-  },
-  {
-    date: "May 2025",
-    text: "Audio processing scripts configured",
+    date: "May 2026",
+    text: "Production dashboard launched",
     type: "system",
   },
 ];
@@ -94,14 +104,14 @@ export default function Home() {
             Next Up
           </p>
           <h3 className="text-lg font-bold mb-1">
-            Episode 2: The Mask We Wear
+            Episode 2: Men&apos;s Mental Health
           </h3>
           <p className="text-sm text-[var(--color-text-muted)] mb-3">
-            Record: Jun 4 &middot; Edit: Jun 5 &middot; Publish: Jun 8
+            Publish: Jun 1 at 6:00 AM &middot; LinkedIn post same day
           </p>
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full border text-xs font-medium border-[var(--color-border)] text-[var(--color-text-muted)]">
-              Planned
+            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full border text-xs font-medium border-yellow-700 text-yellow-400">
+              Scheduled
             </span>
           </div>
         </div>
