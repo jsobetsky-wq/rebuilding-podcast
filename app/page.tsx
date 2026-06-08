@@ -7,16 +7,21 @@ const SPOTIFY_SHOW_URL =
 
 const stats = [
   { label: "Total Episodes", value: "1", sub: "published" },
-  { label: "Total Clips", value: "11", sub: "created" },
+  { label: "Total Clips", value: "17", sub: "created" },
   { label: "Followers", value: "--", sub: "connect analytics" },
   { label: "Avg Length", value: "9:52", sub: "minutes" },
 ];
 
 const recentActivity = [
   {
-    date: "May 30, 2026",
-    text: 'Episode 3 "Rock Bottom Is a Foundation" — structure & LinkedIn preview created',
-    type: "system",
+    date: "Jun 8, 2026",
+    text: 'Episode 3 "Rock Bottom Is a Foundation" recorded, cleaned, 6 clips created',
+    type: "clip",
+  },
+  {
+    date: "Jun 9, 2026",
+    text: 'Episode 3 LinkedIn post scheduled for 6:00 AM',
+    type: "scheduled",
   },
   {
     date: "Jun 1, 2026",
@@ -25,7 +30,7 @@ const recentActivity = [
   },
   {
     date: "May 2026",
-    text: "11 audio clips created from EP1 & EP2",
+    text: "17 audio clips created from EP1, EP2 & EP3",
     type: "clip",
   },
   {

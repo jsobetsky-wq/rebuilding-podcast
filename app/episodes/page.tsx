@@ -47,9 +47,9 @@ const initialEpisodes: Episode[] = [
     number: 3,
     slug: "rock-bottom-is-a-foundation",
     title: "Rock Bottom Is a Foundation",
-    status: "Draft",
-    date: "",
-    duration: "",
+    status: "Recorded",
+    date: "2026-06-09",
+    duration: "9:56",
     spotifyUrl: "",
   },
 ];
