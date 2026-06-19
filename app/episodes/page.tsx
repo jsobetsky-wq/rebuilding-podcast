@@ -52,6 +52,15 @@ const initialEpisodes: Episode[] = [
     duration: "9:56",
     spotifyUrl: "",
   },
+  {
+    number: 4,
+    slug: "move-different",
+    title: "Move Different",
+    status: "Recorded",
+    date: "2026-06-19",
+    duration: "9:10",
+    spotifyUrl: "",
+  },
 ];
 
 export default function EpisodesPage() {
