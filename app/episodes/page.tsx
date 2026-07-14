@@ -61,6 +61,15 @@ const initialEpisodes: Episode[] = [
     duration: "9:10",
     spotifyUrl: "",
   },
+  {
+    number: 5,
+    slug: "start-today",
+    title: "Start Today",
+    status: "Recorded",
+    date: "2026-07-14",
+    duration: "15:54",
+    spotifyUrl: "",
+  },
 ];
 
 export default function EpisodesPage() {

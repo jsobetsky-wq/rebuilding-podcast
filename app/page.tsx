@@ -7,12 +7,17 @@ const SPOTIFY_SHOW_URL =
 
 const stats = [
   { label: "Total Episodes", value: "1", sub: "published" },
-  { label: "Total Clips", value: "23", sub: "created" },
+  { label: "Total Clips", value: "29", sub: "created" },
   { label: "Followers", value: "--", sub: "connect analytics" },
   { label: "Avg Length", value: "9:52", sub: "minutes" },
 ];
 
 const recentActivity = [
+  {
+    date: "Jul 14, 2026",
+    text: 'Episode 5 "Start Today" recorded, cleaned, 6 clips created',
+    type: "clip",
+  },
   {
     date: "Jun 19, 2026",
     text: 'Episode 4 "Move Different" recorded, cleaned, 6 clips created',
@@ -40,7 +45,7 @@ const recentActivity = [
   },
   {
     date: "May 2026",
-    text: "23 audio clips created from EP1, EP2, EP3 & EP4",
+    text: "29 audio clips created from EP1 through EP5",
     type: "clip",
   },
   {
