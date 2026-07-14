@@ -15,6 +15,11 @@ const stats = [
 const recentActivity = [
   {
     date: "Jul 14, 2026",
+    text: "Episode 5 LinkedIn post scheduled for 5:00 PM",
+    type: "scheduled",
+  },
+  {
+    date: "Jul 14, 2026",
     text: 'Episode 5 "Start Today" recorded, cleaned, 6 clips created',
     type: "clip",
   },

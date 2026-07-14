@@ -1,4 +1,5 @@
 # EP5 LinkedIn Post, Start Today
+SCHEDULED: Tue Jul 14 at 5:00 PM
 
 ## POST 1
 
